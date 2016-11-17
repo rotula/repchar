@@ -29,8 +29,12 @@ class CharReporter(object):
                 ret.append(u" \t{:04x}\t{}\t{}".format(
                     ord(c), count, unicodedata.name(c, "[UNKNOWN]")))
             else:
-                ret.append(u"{}\t{:04x}\t{}\t{}".format(
-                    c, ord(c), count, unicodedata.name(c, "[UNKNOWN]")))
+                if unicodedata.combining(c):
+                    ret.append(u" {}\t{:04x}\t{}\t{}".format(
+                        c, ord(c), count, unicodedata.name(c, "[UNKNOWN]")))
+                else:
+                    ret.append(u"{}\t{:04x}\t{}\t{}".format(
+                        c, ord(c), count, unicodedata.name(c, "[UNKNOWN]")))
                 try:
                     ccounter = self.combdir[c]
                     comblist = [(x, y) for (x, y) in ccounter.items()]

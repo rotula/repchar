@@ -2,6 +2,12 @@
 Changelog for repchar
 *********************
 
+1.0.1 (@@@@-@@-@@)
+==================
+
+- Bugfix: somewhat better handling combining diacritics, they are now
+  combined with a space to improve optics in the txt file.
+
 1.0.0 (2016-11-17)
 ==================
 
