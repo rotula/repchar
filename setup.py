@@ -43,6 +43,7 @@ setup_args = dict(
             "License :: OSI Approved :: MIT License",
             "Development Status :: 5 - Production/Stable",
             "Programming Language :: Python",
+            "Programming Language :: Python :: 2.7",
             "Environment :: Console",
             "Topic :: Text Processing",
             "Topic :: Text Processing :: General",

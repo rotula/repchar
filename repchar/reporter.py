@@ -53,7 +53,7 @@ class CharReporter(object):
                 if unicodedata.combining(c):
                     # @@@TODO: maybe other ranges too?
                     if buf:
-                        if not self.combdir.has_key(c):
+                        if c not in self.combdir:
                             self.combdir[c] = {}
                         ccounter = self.combdir[c]
                         ccounter.update({buf: ccounter.get(buf, 0) + 1})

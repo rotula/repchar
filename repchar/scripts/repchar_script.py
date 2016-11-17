@@ -38,9 +38,9 @@ def main():
     if args.b_verbose:
         logging.basicConfig(level=logging.INFO)
     r = CharReporter(combining=args.b_combining)
-    with open(args.infilename, "r") as infile:
+    with open(args.infilename, "rb") as infile:
         cnt = 0
-        for line in infile.xreadlines():
+        for line in infile:
             line = line.strip()
             cnt += 1
             line = line.decode("UTF-8")

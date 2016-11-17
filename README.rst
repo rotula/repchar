@@ -18,6 +18,7 @@ optional arguments:
   -o OUTFILENAME, --outfile OUTFILENAME, --out OUTFILENAME
                         Filename for report
   -v, --verbose         Set log level to INFO.
+  --version             show program's version number and exit
   -c, --comb, --combining
                         Create special report for combining characters
 
