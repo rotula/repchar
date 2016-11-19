@@ -2,5 +2,5 @@
 TODO
 ****
 
-- release
-
+- write minimal documentation
+- write some release helper script
