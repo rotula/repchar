@@ -27,7 +27,7 @@ Module
 
 You can also use the ``CharReporter`` class in your own code:
 
-.. code:: python
+.. code:: pycon
 
     >>> from repchar import CharReporter
     >>> s = u"ABCD"
@@ -42,7 +42,7 @@ You can also use the ``CharReporter`` class in your own code:
 
 The count of each letter is stored in ``CharReporter.chars``:
 
-.. code:: python
+.. code:: pycon
 
     >>> r.chars
     {u'A': 1, u'C': 1, u'B': 1, u'D': 1}
