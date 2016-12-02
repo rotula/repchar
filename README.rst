@@ -5,6 +5,13 @@ repchar
 This is a simple command line script that creates a list of all
 characters contained in a given document.
 
+Download, Installation
+======================
+
+repchar is available on PyPI <https://pypi.python.org/pypi/repchar/>.
+
+Install with ``pip install repchar``.
+
 Usage
 =====
 
@@ -22,8 +29,8 @@ optional arguments:
   -c, --comb, --combining
                         Create special report for combining characters
 
-Module
-======
+The ``Reporter`` class
+======================
 
 You can also use the ``CharReporter`` class in your own code:
 
@@ -46,4 +53,24 @@ The count of each letter is stored in ``CharReporter.chars``:
 
     >>> r.chars
     {u'A': 1, u'C': 1, u'B': 1, u'D': 1}
+
+Special information of combining characters can be collected in
+``CharReporter.combdir`` if you say so at instantiation:
+
+.. code:: pycon
+
+    >>> from repchar import CharReporter
+    >>> r2 = CharReporter(combining=True)
+    >>> s = u"Caffe\u0300"
+    >>> r2.feed(s)
+    >>> print(r2.report())
+    chr	hex	count	unicode
+    C	0043	1	LATIN CAPITAL LETTER C
+    a	0061	1	LATIN SMALL LETTER A
+    e	0065	1	LATIN SMALL LETTER E
+    f	0066	2	LATIN SMALL LETTER F
+     ̀	0300	1	COMBINING GRAVE ACCENT
+                            1 with: LATIN SMALL LETTER E
+    >>> r2.combdir
+    {u'\u0300': {u'e': 1}}
 
