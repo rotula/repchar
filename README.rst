@@ -54,7 +54,7 @@ The count of each letter is stored in ``CharReporter.chars``:
     >>> r.chars
     {u'A': 1, u'C': 1, u'B': 1, u'D': 1}
 
-Special information of combining characters can be collected in
+Special information about combining characters can be collected in
 ``CharReporter.combdir`` if you say so at instantiation:
 
 .. code:: pycon
