@@ -4,6 +4,7 @@
 repchar script
 """
 
+from io import open
 import argparse
 import logging
 
@@ -46,8 +47,8 @@ def main():
             line = line.decode("UTF-8")
             r.feed(line)
     report = r.report()
-    with open(args.outfilename, "w") as reportfile:
-        reportfile.write(report.encode("UTF-8"))
+    with open(args.outfilename, "w", encoding="UTF-8") as reportfile:
+        reportfile.write(report)
 
 if __name__ == "__main__":
     main()

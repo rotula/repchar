@@ -40,7 +40,7 @@ You can also use the ``CharReporter`` class in your own code:
     >>> s = u"ABCD"
     >>> r = CharReporter()
     >>> r.feed(s)
-    >>> r.report()
+    >>> print(r.report())
     chr	hex	count	unicode
     A	0041	1	LATIN CAPITAL LETTER A
     B	0042	1	LATIN CAPITAL LETTER B
@@ -63,7 +63,7 @@ Special information about combining characters can be collected in
     >>> r2 = CharReporter(combining=True)
     >>> s = u"Caffe\u0300"
     >>> r2.feed(s)
-    >>> print(r2.report())
+    >>> print(r2.report().encode("UTF-8"))
     chr	hex	count	unicode
     C	0043	1	LATIN CAPITAL LETTER C
     a	0061	1	LATIN SMALL LETTER A
